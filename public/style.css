@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 2rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.chat {
+  border: 1px solid black;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  height: 20rem;
+  /* overflow-y: scroll; */
+}
+
+.userInput {
+  padding: 0.5rem;
+  border-radius: 2rem;
+  width: 100%;
+}
+
+.message {
+  /* padding: 0.2rem 0; */
+  display: block;
+}
+
+#chat .viewport {
+  width: calc(100% - 40px);
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#chat .overview {
+  list-style: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#chat .thumb .end,
+#chat .thumb {
+  background-color: #003d5d;
+}
+#chat .scrollbar {
+  position: relative;
+  float: right;
+  width: 15px;
+}
+#chat .track {
+  background-color: #d8eefd;
+  height: 100%;
+  width: 13px;
+  position: relative;
+  padding: 0 1px;
+}
+#chat .thumb {
+  height: 20px;
+  width: 13px;
+  cursor: pointer;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+}
+#chat .thumb .end {
+  overflow: hidden;
+  height: 5px;
+  width: 13px;
+}
+#chat .disable {
+  display: none;
+}
+.noSelect {
+  user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
