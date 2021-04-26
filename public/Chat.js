@@ -12,7 +12,7 @@ class Chat {
     this.api.getMessage(this.addMessage);
     this.nick = prompt('Wprowadź nick:');
 
-    while (!this.isProperNick(this.nick)) {
+    while (!this.isProperNick(this.nick) || !this.nick) {
       this.nick = prompt('Wprowadź nick:');
     }
   }
