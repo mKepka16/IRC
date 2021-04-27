@@ -11,9 +11,6 @@ const LIMIT = 20;
 const DELAY = 1000;
 let tick = 0;
 
-const formatTime = (time) =>
-  time < 10 ? `0${time.toString()}` : time.toString();
-
 router.post('/', (req, res) => {
   const date = new Date();
   // const hours = date.getHours();
