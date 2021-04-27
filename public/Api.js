@@ -18,6 +18,8 @@ class Api {
     // console.log(response);
   }
 
+  formatTime = (time) => (time < 10 ? `0${time.toString()}` : time.toString());
+
   async getMessage(addMessage) {
     const response = await fetch('/chat');
     if (response.ok) {
@@ -25,8 +27,21 @@ class Api {
 
       messages.forEach((message) => {
         const { nick, nickColor, text, textColor, time } = message;
+        const date = new Date(time);
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const formatedTime = `${this.formatTime(hours)}:${this.formatTime(
+          minutes
+        )}`;
+
         addMessage(
-          Formatter.getFormattedMessage(time, nick, text, nickColor, textColor)
+          Formatter.getFormattedMessage(
+            formatedTime,
+            nick,
+            text,
+            nickColor,
+            textColor
+          )
         );
       });
     }

@@ -16,13 +16,13 @@ const formatTime = (time) =>
 
 router.post('/', (req, res) => {
   const date = new Date();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const formatedTime = `${formatTime(hours)}:${formatTime(minutes)}`;
+  // const hours = date.getHours();
+  // const minutes = date.getMinutes();
+  // const formatedTime = `${formatTime(hours)}:${formatTime(minutes)}`;
 
   const message = {
     ...req.body,
-    time: formatedTime,
+    time: date.getTime(),
   };
 
   messages.push(message);
